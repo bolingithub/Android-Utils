@@ -9,11 +9,21 @@ import android.widget.Toast;
 public class MyToastUtil {
 
     private static Toast mToast;
-    private static String mShowText;
+    private static String mShowText;  // 上一次显示的文本内容
+
     /**
      * 默认保留上一次的文本不同的toast
      */
     private static boolean mIsKeep = true;
+
+    /**
+     * 是否保存上一次的文本内容
+     *
+     * @param isKeep
+     */
+    public static void IsKeepTheLastText(boolean isKeep) {
+        MyToastUtil.mIsKeep = isKeep;
+    }
 
     /**
      * 显示toast
@@ -22,7 +32,7 @@ public class MyToastUtil {
      * @param text    显示的文本
      */
     public static void showToast(Context context, String text) {
-        if (mShowText != null && !mShowText.equals(text) && mIsKeep) {
+        if (mToast != null && mShowText != null && !mShowText.equals(text) && mIsKeep) {
             // 和上次的文本内容不一致，等待上次的显示完成之后再显示
             mToast = Toast.makeText(context.getApplicationContext(), text, Toast.LENGTH_SHORT);
         } else {
@@ -36,18 +46,6 @@ public class MyToastUtil {
         }
         mToast.show();
         mShowText = text;
-    }
-
-    /**
-     * 显示toast
-     *
-     * @param context 上下文对象
-     * @param text    显示的文本
-     * @param isKeep  是否保留上次的文本
-     */
-    public static void showToast(Context context, String text, boolean isKeep) {
-        mIsKeep = isKeep;
-        showToast(context, text);
     }
 
     /**
