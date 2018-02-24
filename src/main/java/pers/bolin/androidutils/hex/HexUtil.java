@@ -17,7 +17,7 @@ public class HexUtil {
         }
         hexString = hexString.toUpperCase().replace(" ", ""); // 转换为大写，去掉空格
         if (hexString.length() % 2 != 0) {
-            throw new IllegalArgumentException("需要转化的长度不为偶数");
+            hexString = "0" + hexString;
         }
         if (!isHexString(hexString)) {
             throw new IllegalArgumentException("需要转化的长度不为有效的16进制数据");
