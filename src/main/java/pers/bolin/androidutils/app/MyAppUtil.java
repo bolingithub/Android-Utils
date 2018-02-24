@@ -8,7 +8,6 @@ import android.content.pm.PackageManager;
  * app 相关工具
  * Created by H-Bolin on 2018/2/24.
  */
-
 public class MyAppUtil {
 
     /**
