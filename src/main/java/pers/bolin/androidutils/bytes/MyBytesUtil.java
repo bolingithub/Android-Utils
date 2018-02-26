@@ -6,7 +6,7 @@ import java.util.Arrays;
  * 字节工具
  * Created by LanHe-Android on 2017/6/5.
  */
-public class BytesUtil {
+public class MyBytesUtil {
 
     /**
      * 从一个byte[]数组中截取一部分,注意不能截取超过src数组的长度

@@ -3,7 +3,7 @@ package pers.bolin.androidutils.hex;
 /**
  * 16进制工具
  */
-public class HexUtil {
+public class MyHexUtil {
 
     /**
      * 16进制字符串转换为byte[]

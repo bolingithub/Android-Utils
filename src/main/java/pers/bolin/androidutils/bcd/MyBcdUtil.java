@@ -1,14 +1,14 @@
 package pers.bolin.androidutils.bcd;
 
 
-import pers.bolin.androidutils.hex.HexUtil;
+import pers.bolin.androidutils.hex.MyHexUtil;
 
 /**
  * bcd工具
  *
  * @author LanHe-Android
  */
-public class BcdUtil {
+public class MyBcdUtil {
 
     /**
      * 将int 转化为bcd字节
@@ -55,7 +55,7 @@ public class BcdUtil {
      */
     public static String bytesToBcdString(byte[] src) {
         // 不会出现ABCD
-        return HexUtil.bytesToHexString(src);
+        return MyHexUtil.bytesToHexString(src);
     }
 
     /**
